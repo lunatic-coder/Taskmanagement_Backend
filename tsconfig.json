@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",                        // Modern JS features
+    "module": "NodeNext",                      // Required for using .mjs with NodeNext resolution
+    "moduleResolution": "NodeNext",            // Resolves .mjs and .ts correctly
+    "lib": ["ES2020"],                         // Includes standard library
+    "outDir": "./dist",                        // Output directory for compiled files
+    "rootDir": "./src",                        // Source directory
+    "strict": true,                            // Enables strict type checks
+    "esModuleInterop": true,                   // Allows default imports from CommonJS
+    "forceConsistentCasingInFileNames": true,  // Enforces case-sensitive paths
+    "skipLibCheck": true,                      // Skips checking node_modules
+    "resolveJsonModule": true,                 // Allows importing JSON files
+    "noImplicitAny": false,                    // (Optional) You can set to true for strict typing
+    "allowSyntheticDefaultImports": true       // Allow `import x from "y"` even if y is CommonJS
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}
+// This configuration is for a TypeScript project using ESNext modules and modern JavaScript features.

@@ -3,7 +3,7 @@ import { z } from "zod";
 // User info in response
 export const UserResponseSchema = z.object({
   id: z.string(),
-  username: z.string(),
+  name: z.string(),
   email: z.string(),
   role: z.enum(["admin", "user"]),
 });

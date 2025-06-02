@@ -1,18 +1,23 @@
 import { User } from "../models/user.model";
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
+import { ApiError } from "../utils/ApiError";
 
-export const signup = async ({ username, email, password, role }) => {
-  const existingUser = await User.findOne({ email });
-  if (existingUser) throw new Error('User already exists');
+export const signup = async (data:any) => {
 
-  const hashedPassword = await bcrypt.hash(password, 10);
-  const user = new User({ username, email, password: hashedPassword, role });
+
+  const existingUser = await User.findOne({ email:data.email });
+
+  if (existingUser) throw new ApiError("User already exists", 409);
+
+  const hashedPassword = await bcrypt.hash(data.password, 10);
+  const user = new User({ name: data.name, email: data.email, password: hashedPassword,role: data.role });
   await user.save();
   return user;
 };
 
 export const login = async ({ email, password }) => {
+  console.log("Login attempt with email:", email, password);
   const user = await User.findOne({ email });
   if (!user) throw new Error('Invalid credentials');
 
@@ -27,7 +32,7 @@ export const login = async ({ email, password }) => {
     ),
     user: {
       id: user._id,
-      username: user.username,
+      name: user.name,
       email: user.email,
       role: user.role,
     }

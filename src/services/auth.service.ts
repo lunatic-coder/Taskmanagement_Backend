@@ -17,7 +17,7 @@ export const signup = async (data:any) => {
 };
 
 export const login = async ({ email, password }) => {
-  console.log("Login attempt with email:", email, password);
+
   const user = await User.findOne({ email });
   if (!user) throw new Error('Invalid credentials');
 

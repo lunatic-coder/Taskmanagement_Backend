@@ -12,7 +12,9 @@
     "skipLibCheck": true,                      // Skips checking node_modules
     "resolveJsonModule": true,                 // Allows importing JSON files
     "noImplicitAny": false,                    // (Optional) You can set to true for strict typing
-    "allowSyntheticDefaultImports": true       // Allow `import x from "y"` even if y is CommonJS
+    "allowSyntheticDefaultImports": true,       // Allow `import x from "y"` even if y is CommonJS
+    "typeRoots": ["./src/types", "./node_modules/@types"]
+
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]

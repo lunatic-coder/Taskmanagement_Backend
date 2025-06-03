@@ -5,6 +5,7 @@ import { globalErrorHandler } from './middlewares/error.middleware';
 
 import authRoutes from './routes/auth.routes';
 import taskRouter from './routes/task.routes';
+import userRouter from './routes/user.routes';
 
 dotenv.config();
 const app = express();
@@ -21,6 +22,7 @@ app.use(express.json());
 // routes
 app.use('/api/auth', authRoutes);
 app.use("/api/tasks", taskRouter);
+app.use("/api/users", userRouter);
 
 
 app.use(globalErrorHandler);

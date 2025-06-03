@@ -4,6 +4,19 @@ This is the **backend server** for the Task Management System. Built with **Expr
 
 ---
 
+## Getting Started
+
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+
 ## ⚙️ Tech Stack
 
 - **Node.js** + **Express.js**
